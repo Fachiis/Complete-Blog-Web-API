@@ -22,14 +22,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #Local urls
-    path('', include('users.urls')),
-
     path('api/v1/', include('api.urls')),
-    path('api-auth/', include('rest_framework.urls')),
-    path('api/v1/rest-auth/', include('rest_auth.urls')),
+    
 
     #Third party urls
+    path('api-auth/', include('rest_framework.urls')),
     path('accounts/', include('allauth.urls')),  #This is used to call out confirm email
+    path('api/v1/rest-auth/', include('rest_auth.urls')),
     path('api/v1/rest-auth/registration/', include('rest_auth.registration.urls')),
     re_path(r"^rest-auth/registration/account-confirm-email/(?P<key>[\s\d\w().+-_',:&]+)/$", confirm_email, name="account_confirm_email"),
 ]

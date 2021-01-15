@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     #Local App
     'posts.apps.PostsConfig',
     'api.apps.ApiConfig',
-    'users.apps.UsersConfig',
 ]
 
 REST_FRAMEWORK = {
